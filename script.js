@@ -1,3 +1,5 @@
+const myLibrary = [];
+
 function Book(title, author, pages, read) 
 {
     this.title = title;
@@ -19,5 +21,17 @@ function Book(title, author, pages, read)
 }
 
 
-const someBook = new Book('The Best Book', "Yours Truly", 69, true);
-console.log(someBook.info());
+function addBookToLibrary(title, author, pages, read)
+{
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+}
+
+addBookToLibrary("Invisible Cities", "Italo Calvino", 229, true);
+addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
+
+
+for (const book of myLibrary)
+{
+    console.log(book.info())
+}
