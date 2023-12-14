@@ -89,3 +89,5 @@ window.addEventListener("load", displayBooks);
 document.getElementById("addBook").addEventListener("click", function() {
     openModal();
 });
+
+openModal();
