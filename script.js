@@ -11,7 +11,7 @@ function Book(title, author, pages, read)
         {
             return "read.";
         }
-        return "is not read yet."
+        return "not read yet."
     }
 
     this.info = function() 
@@ -30,8 +30,29 @@ function addBookToLibrary(title, author, pages, read)
 addBookToLibrary("Invisible Cities", "Italo Calvino", 229, true);
 addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
 
+function displayBooks() {
+    const bookContainer = document.getElementById("bookContainer");
 
-for (const book of myLibrary)
-{
-    console.log(book.info())
+    // Clear existing content
+    bookContainer.innerHTML = "";
+
+    for (const book of myLibrary) {
+        // card element for each book
+        const card = document.createElement("div");
+        card.classList.add("book-card");
+
+        // populate card with info
+        card.innerHTML = `
+            <h3>${book.title}</h3>
+            <p>Author: ${book.author}</p>
+            <p>Pages: ${book.pages}</p>
+            <p>Status: ${book.isRead()}</p>
+        `;
+
+        // Append the card to the bookContainer
+        bookContainer.appendChild(card);
+    }
 }
+
+// Display books when the page loads
+window.addEventListener("load", displayBooks);
