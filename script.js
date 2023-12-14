@@ -1,3 +1,4 @@
+// initial code for creating the array and adding some books to it
 const myLibrary = [];
 
 function Book(title, author, pages, read) 
@@ -26,6 +27,10 @@ function addBookToLibrary(title, author, pages, read)
 addBookToLibrary("Invisible Cities", "Italo Calvino", 229, true);
 addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
 
+
+// functionalities
+
+// function to display all the books from the array into cards
 function displayBooks() {
     const bookContainer = document.getElementById("bookContainer");
 
@@ -50,22 +55,31 @@ function displayBooks() {
     }
 }
 
+// utility functions for the dialog
+function openModal() {
+    document.getElementById("addBookDialog").style.display = "block";
+}
 
-// function that adds a book based on user input
-function addBookPrompt() {
-    const title = prompt("Enter title:");
-    const author = prompt("Enter author:");
-    const pages = parseInt(prompt("Enter pages:"));
-    const read = confirm("Did you read this?");
+function closeModal() {
+    document.getElementById("addBookDialog").style.display = "none";
+}
 
-    if(title && author && !isNaN(pages)) {
+// function to add book from dialog
+function addBookFromModal() {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = parseInt(document.getElementById("pages").value);
+    const read = document.getElementById("read").checked;
+
+    if (title && author && !isNaN(pages)) {
         addBookToLibrary(title, author, pages, read);
         displayBooks();
-    }
-    else {
-        alert("Invalid input.");
+        closeModal();
+    } else {
+        alert("Invalid input. Please enter valid information.");
     }
 }
+
 
 // display books when the page loads
 window.addEventListener("load", displayBooks);
@@ -73,5 +87,5 @@ window.addEventListener("load", displayBooks);
 
 // event listener for the add button
 document.getElementById("addBook").addEventListener("click", function() {
-    addBookPrompt();
+    openModal();
 });
