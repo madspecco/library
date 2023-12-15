@@ -26,13 +26,18 @@ function addBookToLibrary(title, author, pages, read)
 
 addBookToLibrary("Invisible Cities", "Italo Calvino", 229, true);
 addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
-
+addBookToLibrary("Cel mai iubit dintre pamanteni", "Marin Preda", 463, false);
+addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
+addBookToLibrary("Invisible Cities", "Italo Calvino", 229, true);
+addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
+addBookToLibrary("Cel mai iubit dintre pamanteni", "Marin Preda", 463, false);
+addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
 
 // functionalities
 
 // function to display all the books from the array into cards
 function displayBooks() {
-    const bookContainer = document.getElementById("bookContainer");
+    const bookContainer = document.getElementById("book-container");
 
     // clear existing content
     bookContainer.innerHTML = "";
@@ -86,8 +91,6 @@ window.addEventListener("load", displayBooks);
 
 
 // event listener for the add button
-document.getElementById("addBook").addEventListener("click", function() {
-    openModal();
-});
-
-openModal();
+// document.getElementById("addBook").addEventListener("click", function() {
+//     openModal();
+// });
