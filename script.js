@@ -62,11 +62,12 @@ function displayBooks() {
 
 // utility functions for the dialog
 function openModal() {
-    document.getElementById("addBookDialog").style.display = "block";
+    document.getElementById("modal-content").style.display = "flex";
 }
 
 function closeModal() {
-    document.getElementById("addBookDialog").style.display = "none";
+    document.getElementById("modal-content").style.display = "none";
+
 }
 
 // function to add book from dialog
@@ -85,12 +86,10 @@ function addBookFromModal() {
     }
 }
 
-
 // display books when the page loads
 window.addEventListener("load", displayBooks);
 
-
 // event listener for the add button
-// document.getElementById("addBook").addEventListener("click", function() {
-//     openModal();
-// });
+document.getElementById("addBook").addEventListener("click", function() {
+    openModal();
+});
