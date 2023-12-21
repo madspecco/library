@@ -6,6 +6,8 @@ function Book(title, author, pages, read)
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
+
     this.isRead = function()
     {
         return this.read ? "read." : "not read yet.";
@@ -26,6 +28,7 @@ function addBookToLibrary(title, author, pages, read)
 
 addBookToLibrary("Cel mai iubit dintre pamanteni", "Marin Preda", 463, false);
 addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
+addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, true);
 
 // functionalities
 
