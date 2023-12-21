@@ -26,9 +26,6 @@ function addBookToLibrary(title, author, pages, read)
     myLibrary.push(newBook);
 }
 
-addBookToLibrary("Cel mai iubit dintre pamanteni", "Marin Preda", 463, false);
-addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
-addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, true);
 
 // functionalities
 
