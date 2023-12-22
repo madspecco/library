@@ -28,6 +28,28 @@ h1 {
     color: #C2D9FF;
 }
 
+.book-card button {
+    width: 6rem;
+    background-color: #190482;
+    color: #C2D9FF;
+    border: 2px solid #C2D9FF;
+    border-radius: 0.3rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: Audiowide;
+}
+
+.book-card button:hover {
+    background-color: #7752FE;
+    color: #C2D9FF;
+    border: 2px solid #C2D9FF;
+    border-radius: 0.3rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: Audiowide;
+}
+
+
 #addBook {
     position: fixed;
     bottom: 10px;
@@ -132,6 +154,7 @@ footer {
     left: 10px;
     bottom: 10px;
     cursor: pointer;
+    padding-left: 1rem;
 }
 
 a, a:visited {

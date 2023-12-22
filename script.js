@@ -10,7 +10,7 @@ function Book(title, author, pages, read)
 
     this.isRead = function()
     {
-        return this.read ? "read." : "not read yet.";
+        return this.read ? "Read" : "Not Read";
     }
 
     this.info = function() 
@@ -36,19 +36,39 @@ function displayBooks() {
     // clear existing content
     bookContainer.innerHTML = "";
 
-    for (const book of myLibrary) {
+    for (let i = 0; i < myLibrary.length; i++) {
+        // define book element
+        const book = myLibrary[i];
+
         // card element for each book
         const card = document.createElement("div");
         card.classList.add("book-card");
+
+        // create a button with an event listener for toggling read status
+        const toggleBtn = document.createElement("button");
+        toggleBtn.textContent = book.isRead();
+        toggleBtn.style.backgroundColor = book.read ? '#7752FE' : '#190482';
+        toggleBtn.style.color = '#C2D9FF';
+        toggleBtn.addEventListener("click", function () {
+            myLibrary[i].read = !myLibrary[i].read;
+            toggleBtn.style.backgroundColor = myLibrary[i].read ? '#7752FE' : '#190482';
+            displayBooks();
+        });
+
+        // append toggleBtn to card
+        card.appendChild(toggleBtn);
 
         // populate card with info
         card.innerHTML = `
             <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
-            <p>Status: ${book.isRead()}</p>
+            <p>Status: </p>
         `;
 
+        // append toggleBtn to the paragraph inside the card
+        card.querySelector("p:last-child").appendChild(toggleBtn);
+        
         // add card to the bookContainer
         bookContainer.appendChild(card);
     }
