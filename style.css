@@ -49,6 +49,17 @@ h1 {
     font-family: Audiowide;
 }
 
+.book-card .remove-btn {
+    width: 2rem;
+    background-color: #190482;
+    padding: 5px;
+}
+
+.book-card .remove-btn:hover {
+    background-color: #7752FE;
+    padding: 5px;
+    cursor: pointer;
+}
 
 #addBook {
     position: fixed;

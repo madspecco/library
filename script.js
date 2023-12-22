@@ -26,7 +26,8 @@ function addBookToLibrary(title, author, pages, read)
     myLibrary.push(newBook);
 }
 
-
+addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
+addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, true);
 // functionalities
 
 // function to display all the books from the array into cards
@@ -55,16 +56,44 @@ function displayBooks() {
             displayBooks();
         });
 
-        // append toggleBtn to card
+        // create remove button with an event listener
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "X";
+        removeBtn.classList.add('remove-btn');
+        removeBtn.addEventListener("click", function () {
+            // remove the book from the array
+            myLibrary.splice(i, 1);
+            bookContainer.removeChild(card);
+            displayBooks();
+        });
+
+        // append extra elements to card
+        card.appendChild(removeBtn);
         card.appendChild(toggleBtn);
 
-        // populate card with info
-        card.innerHTML = `
-            <h3>${book.title}</h3>
-            <p>Author: ${book.author}</p>
-            <p>Pages: ${book.pages}</p>
-            <p>Status: </p>
-        `;
+        // create elements for book info
+        const titleElement = document.createElement("h3");
+        titleElement.textContent = book.title;
+
+        const authorElement = document.createElement("p");
+        authorElement.textContent = `Author: ${book.author}`;
+
+        const pagesElement = document.createElement("p");
+        pagesElement.textContent = `Pages: ${book.pages}`;
+
+        const statusElement = document.createElement("p");
+        statusElement.textContent = "Status: ";
+
+        // append toggleBtn to the paragraph inside the card
+        statusElement.appendChild(toggleBtn);
+
+        // append elements to card
+        card.appendChild(removeBtn);
+        card.appendChild(titleElement);
+        card.appendChild(authorElement);
+        card.appendChild(pagesElement);
+        card.appendChild(statusElement);        
+        
 
         // append toggleBtn to the paragraph inside the card
         card.querySelector("p:last-child").appendChild(toggleBtn);

@@ -16,4 +16,4 @@ This is done with the help of a modal which contains 4 user inputs with respect 
 It also has a remove button for each card.
 
 # Overview
-<img src="./img/library-ss.png.png">
+<img src="./lib-ss.png">
