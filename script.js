@@ -26,8 +26,6 @@ function addBookToLibrary(title, author, pages, read)
     myLibrary.push(newBook);
 }
 
-addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, false);
-addBookToLibrary("Crime and Punishment", "F.Dostoyevsky", 504, true);
 // functionalities
 
 // function to display all the books from the array into cards
